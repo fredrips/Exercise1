@@ -22,7 +22,7 @@ Parallelism: several tasks or a task that is divided into smaller tasks runs at 
  > It gets more complicated as you control several things at the same time.
 
  ### What are the differences between processes, threads, green threads, and coroutines?
- > 
+ > Processes and threads are independent sequences of execution, but threads run in shared memory space, while processes run in separate memory space. Green threads emulate multithreading on "user-level" and not on OS level.
 
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
  > threading.Thread() will create a thread, while go create a coroutine.
@@ -31,7 +31,7 @@ Parallelism: several tasks or a task that is divided into smaller tasks runs at 
  > It synchronizes the execution of threads so that only one native thread can execute at a time.  
 
  ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
- > *Your answer here*
+ > Multiprocessing. Using subprocesses instead of threads to "simulate" multicore.
 
  ### What does `func GOMAXPROCS(n int) int` change?
  > It sets the maximum number of CPUs that can be executing simultaneously.
